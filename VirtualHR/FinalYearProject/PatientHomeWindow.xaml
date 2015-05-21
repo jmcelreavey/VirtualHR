@@ -1,0 +1,18 @@
+﻿<Page x:Class="FinalYearProject.PatientHomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Patient Options">
+
+    <Grid Height="600" Width="800" Background="#FFF5FCFE">
+
+        <Border x:Name="borderOptions" Padding="10" Background="#FF69D1F6" Height="100" 
+                HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <TextBlock x:Name="txtOptions" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Options:" Foreground="#FFF5FCFE" FontFamily="Verdana" FontSize="36" FontWeight="Bold" FontStyle="Italic" TextDecorations="Underline" />
+        </Border>
+
+        <Button x:Name="btnLogOut" Content="Log Out" HorizontalAlignment="Right" VerticalAlignment="Center" Width="120" Margin="0,0,200,0" Height="70" FontSize="18" Click="btnLogOut_Click" IsCancel="True"/>
+        <Button x:Name="btnResults" Content="Results" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="70" Margin="0,0,0,0" FontSize="18" Click="btnResults_Click"/>
+        <Button x:Name="btnExercise" Content="Exercises" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Height="70" Margin="200,0,0,0" FontSize="18" Click="btnExercise_Click"/>
+    </Grid>
+</Page>
+

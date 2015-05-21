@@ -1,0 +1,59 @@
+﻿<Page
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit" x:Class="FinalYearProject.PatientResultWindow"
+        Title="Patient Options">
+
+    <Grid Height="600" Width="800" Background="#FFF5FCFE">
+        <Border x:Name="borderOptions" Padding="10" Background="#FF69D1F6" Height="100" 
+			HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <TextBlock x:Name="txtResults" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Results:" Foreground="#FFF5FCFE" FontFamily="Verdana" FontSize="36" FontWeight="Bold" FontStyle="Italic" TextDecorations="Underline" />
+        </Border>
+
+        <chartingToolkit:Chart Name="ctkLineGraph" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0" Height="350" Width="790">
+            <chartingToolkit:Chart.Axes>
+                <chartingToolkit:CategoryAxis x:Name="LineCategoryAxis" Title="Repetition #" Orientation="X" Margin="0,0,12,0" />
+                <chartingToolkit:LinearAxis x:Name="LineLinearAxis" Title="Time (seconds)" Orientation="Y"/>
+            </chartingToolkit:Chart.Axes>
+            <chartingToolkit:LineSeries  DependentValuePath="Item2" IndependentValuePath="Item1" ItemsSource="{Binding}" IsSelectionEnabled="True"/>
+
+            <chartingToolkit:Chart.LegendStyle>
+                <Style TargetType="Control">
+                    <Setter Property="Width" Value="0" />
+                    <Setter Property="Height" Value="0" />
+                </Style>
+            </chartingToolkit:Chart.LegendStyle>
+        </chartingToolkit:Chart>
+
+        <chartingToolkit:Chart Name="ctkColumnChart" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"  Height="350" Width="790" Visibility="Hidden">
+            <chartingToolkit:Chart.Axes>
+                <chartingToolkit:CategoryAxis x:Name="ColumnCategoryAxis" Title="Repetition #" Orientation="X" Margin="0,0,12,0" />
+                <chartingToolkit:LinearAxis x:Name="ColumnLinearAxis" Title="Time (seconds)" Orientation="Y"/>
+            </chartingToolkit:Chart.Axes>
+            <chartingToolkit:ColumnSeries DependentValuePath="Item2" IndependentValuePath="Item1" ItemsSource="{Binding}" IsSelectionEnabled="True" />
+
+            <chartingToolkit:Chart.LegendStyle>
+                <Style TargetType="Control">
+                    <Setter Property="Width" Value="0" />
+                    <Setter Property="Height" Value="0" />
+                </Style>
+            </chartingToolkit:Chart.LegendStyle>
+        </chartingToolkit:Chart>
+
+        <ComboBox x:Name="cbxExercises" HorizontalAlignment="Center" Margin="0,0,175,100" VerticalAlignment="Bottom" Width="150" DropDownClosed="cbxExercises_DropDownClosed">
+            <ComboBoxItem Content="Fist Clench" IsSelected="True"/>
+            <ComboBoxItem Content="Claw Stretch"/>
+            <ComboBoxItem Content="Thumb Touch"/>
+        </ComboBox>
+        <ComboBox x:Name="cbxDates" HorizontalAlignment="Center" Margin="175,0,0,100" VerticalAlignment="Bottom" Width="150" DropDownClosed="cbxDates_DropDownClosed"/>
+
+        <StackPanel Margin="0,0,0,60" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <RadioButton x:Name="rdoLineGraph" GroupName="Charts" Content="Line Graph" IsChecked="True" Checked="RadioButton_Checked"/>
+            <RadioButton x:Name="rdoColumnChart" GroupName="Charts" Content="Column Chart" Checked="RadioButton_Checked" />
+        </StackPanel>
+
+        <Button x:Name="btnDone" Content="Done" HorizontalAlignment="Left" Width="156" Height="70" Margin="10,0,0,10" FontSize="18" Click="btnDone_Click" VerticalAlignment="Bottom" IsDefault="True"/>
+        <Button x:Name="btnHistorical" Content="Previous 10 Results" HorizontalAlignment="Left" Width="117" Height="22" Margin="578,478,0,0" Click="btnHistorical_Click" VerticalAlignment="Top" IsDefault="True" RenderTransformOrigin="0.019,-1.55"/>
+    </Grid>
+</Page>
+

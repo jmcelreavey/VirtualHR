@@ -1,0 +1,6 @@
+﻿<NavigationWindow x:Class="FinalYearProject.NavigationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Source="LoginWindow.xaml"
+        Title="Virtual Hand Rehabilitation" Height="635" Width="815"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" ShowsNavigationUI="False">
+</NavigationWindow>

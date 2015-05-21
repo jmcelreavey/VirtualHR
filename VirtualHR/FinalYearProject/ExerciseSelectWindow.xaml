@@ -1,0 +1,19 @@
+﻿<Page x:Class="FinalYearProject.ExerciseSelectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Select Exercise">
+
+    <Grid Height="600" Width="800" Background="#FFF5FCFE">
+
+        <Border x:Name="borderExerciseSelect" Padding="10" Background="#FF69D1F6" Height="100" 
+                HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <TextBlock x:Name="txtExerciseSelect" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Select Exercise" Foreground="#FFF5FCFE" FontFamily="Verdana" FontSize="36" FontWeight="Bold" FontStyle="Italic" TextDecorations="Underline" />
+        </Border>
+
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Margin="10,0,0,10" Height="70" FontSize="18" Click="btnBack_Click"/>
+
+        <Button x:Name="btnFistClench" Content="Fist Clench" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="70" Margin="0,0,300,0" FontSize="18" Tag="Fist Clench" Click="btnPerformExercise_Click"/>
+        <Button x:Name="btnThumbTouch" Content="Thumb Touch" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="70" Margin="300,0,0,0" FontSize="18" Tag="Thumb Touch" Click="btnPerformExercise_Click" />
+        <Button x:Name="btnClawStretch" Content="Claw Stretch" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="70" Margin="0" FontSize="18" Tag="Claw Stretch" Click="btnPerformExercise_Click"/>
+    </Grid>
+</Page>
